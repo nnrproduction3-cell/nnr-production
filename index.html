@@ -6,150 +6,59 @@
     <title>NNR Production Official</title>
     <style>
         body {
-            background: linear-gradient(-45deg, #004e92, #001f3f, #0052d4, #1a1a2e);
-            background-size: 400% 400%;
-            animation: gradientBG 10s ease infinite;
-            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to bottom, #004e92, #000428);
+            font-family: 'Segoe UI', Arial, sans-serif;
             color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
+            display: flex; flex-direction: column; align-items: center;
+            min-height: 100vh; margin: 0; padding: 20px;
         }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .logo-profile {
+            width: 100px; height: 100px; background: white; border-radius: 50%;
+            margin-bottom: 15px; display: flex; align-items: center; justify-content: center;
+            color: #001f3f; font-weight: bold; font-size: 26px; border: 3px solid white;
         }
-
-        .container {
-            width: 100%;
-            max-width: 380px;
-            text-align: center;
-        }
-
-        .logo-circle {
-            width: 100px;
-            height: 100px;
-            background: white;
-            border-radius: 50%;
-            margin: 0 auto 15px auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-        }
-
-        .logo-circle span { color: #001f3f; font-size: 28px; font-weight: bold; }
-
-        h1 { font-size: 22px; margin: 0; }
-        
-        /* Gaya untuk Bendera dan Kata-kata Sebelumnya */
         .badge {
-            display: inline-block;
-            background: #e63946; 
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: bold;
-            margin-top: 10px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
+            background: #e63946; color: white; padding: 8px 20px;
+            border-radius: 20px; font-size: 12px; font-weight: bold; margin-bottom: 15px;
         }
-
-        .intro-card {
+        /* Kotak Abu-abu Tengah */
+        .info-box {
             background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 15px;
-            border-radius: 15px;
-            margin-bottom: 20px;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            font-size: 14px;
-            line-height: 1.5;
+            padding: 20px; border-radius: 15px; width: 90%; max-width: 320px;
+            text-align: center; margin-bottom: 25px; line-height: 1.6;
         }
-
-        .section-header {
-            font-weight: bold;
-            font-size: 13px;
-            margin: 20px 0 10px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
+        .links { width: 90%; max-width: 320px; }
+        .btn {
+            display: block; text-align: center; padding: 12px; margin-bottom: 12px;
+            border-radius: 8px; font-weight: bold; text-decoration: none; color: white;
+            text-transform: uppercase; font-size: 14px;
         }
-
-        /* Tombol Link dengan Animasi Mantul */
-        .btn-link {
-            background: white;
-            color: #004e92;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            padding: 8px;
-            margin-bottom: 12px;
-            border-radius: 12px;
-            font-weight: bold;
-            transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .btn-link:active { transform: scale(0.92); background: #f0f0f0; }
-
-        .icon-box {
-            width: 45px;
-            height: 45px;
-            background: #000;
-            border-radius: 8px;
-            margin-right: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .icon-box span { color: white; font-size: 14px; }
-        .btn-text { flex-grow: 1; text-align: left; font-size: 14px; }
+        /* Warna Tombol Sesuai Gambar */
+        .btn-red { background-color: #ff0000; }
+        .btn-yellow { background-color: #ffcc00; color: #000; }
+        .btn-blue { background-color: #004e92; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="logo-circle"><span>NNR</span></div>
-        <h1>@nnrprodution</h1>
-        
-        <div class="badge">🇮🇩 Karya Anak Bangsa Indonesia</div>
+    <div class="logo-profile">NNR</div>
+    
+    <h1 style="font-size: 22px; margin: 0;">@nnrprodution</h1>
+    <div class="badge">🇮🇩 KARYA ANAK BANGSA INDONESIA</div>
 
-        <div class="intro-card">
-            <strong>Halo! Selamat datang di NNR.</strong><br>
-            Kami adalah tim pengembang game indie kreatif dari <strong>HSS</strong>. 
-            Dukung kami terus ya!
-        </div>
+    <div class="info-box">
+        <h3 style="margin-top: 0;">Halo! Selamat datang di NNR.</h3>
+        <p style="font-size: 13px;">
+            Kami adalah tim pengembang game indie kreatif dari <b>HSS</b>. Kini kami fokus dan inovatif. Mari berkolaborasi dan dukung kami terus ya!
+        </p>
+    </div>
 
-        <div class="section-header">TENTUKAN PILIHAN KAMU</div>
-
-        <a href="https://youtube.com/@nnr13" class="btn-link">
-            <div class="icon-box"><span>AR</span></div>
-            <div class="btn-text">KLIK, YOUTUBE NNR</div>
-        </a>
-
-        <a href="https://s.snackvideo.com/u/@nnrproduction" class="btn-link">
-            <div class="icon-box"><span>AR</span></div>
-            <div class="btn-text">KLIK, SNACK VIDEO</div>
-        </a>
-
-        <div class="section-header">INFO SOSIAL MEDIA</div>
-
-        <a href="https://www.instagram.com/nnrprodution" class="btn-link">
-            <div class="icon-box"><span>AR</span></div>
-            <div class="btn-text">INSTAGRAM UTAMA</div>
-        </a>
-
-        <a href="https://wa.me/628XXXXXXXXXX" class="btn-link">
-            <div class="icon-box"><span>AR</span></div>
-            <div class="btn-text">HUBUNGI ADMIN</div>
-        </a>
+    <div class="links">
+        <a href="https://youtube.com/@nnr13" class="btn btn-red">Youtube Channel</a>
+        <a href="https://s.snackvideo.com/u/@nnrproduction" class="btn btn-yellow">Snack Video</a>
+        <a href="https://www.instagram.com/nnrprodution" class="btn btn-blue">Instagram Utama</a>
+        <a href="#" class="btn btn-blue">Portfolio Game</a>
     </div>
 
 </body>
