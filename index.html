@@ -6,117 +6,81 @@
     <title>NNR Production Official</title>
     <style>
         body {
-            background: linear-gradient(135deg, #004e92, #001f3f);
+            background: linear-gradient(-45deg, #004e92, #001f3f, #0052d4, #1a1a2e);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
             font-family: 'Segoe UI', sans-serif;
             color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
+            display: flex; flex-direction: column; align-items: center;
+            min-height: 100vh; margin: 0; padding: 40px 20px;
         }
-
-        .container {
-            width: 100%;
-            max-width: 360px;
-            text-align: center;
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
-
-        .logo-circle {
-            width: 110px;
-            height: 110px;
-            background: white;
-            border-radius: 50%;
-            margin: 0 auto 15px auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-        }
-
-        .logo-circle span {
-            color: #001f3f;
-            font-size: 32px;
-            font-weight: bold;
-        }
-
-        h1 { font-size: 22px; margin: 0; }
+        .container { width: 100%; max-width: 380px; text-align: center; }
         
+        .logo-profile {
+            width: 110px; height: 110px; background: #fff; border-radius: 50%;
+            margin: 0 auto 15px; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4); overflow: hidden; border: 3px solid white;
+        }
+        .logo-profile img { width: 100%; height: 100%; object-fit: cover; }
+
         .badge {
-            display: inline-block;
-            background: #e63946; 
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: bold;
-            margin-top: 10px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            display: inline-block; background: #e63946; color: white;
+            padding: 5px 15px; border-radius: 20px; font-size: 11px; font-weight: bold; margin-bottom: 20px;
         }
 
-        .intro-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 20px;
-            border-radius: 20px;
-            margin-bottom: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            line-height: 1.6;
-            font-size: 14px;
+        .btn-link {
+            background: white; color: #333; text-decoration: none;
+            display: flex; align-items: center; padding: 8px; margin-bottom: 12px;
+            border-radius: 12px; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
-        .btn {
-            display: block;
-            background: white;
-            color: #004e92;
-            text-decoration: none;
-            padding: 14px;
-            margin-bottom: 10px;
-            border-radius: 12px;
-            font-weight: bold;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            transition: 0.3s;
+        /* Kotak Ikon AR Hitam sesuai keinginanmu */
+        .ar-box {
+            width: 44px; height: 44px; background: #000; border-radius: 8px;
+            margin-right: 15px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
         }
-
-        .btn-yt { background: #FF0000; color: white; }
-        .btn-snack { background: #ffcc00; color: #000; }
-        .btn-ig { background: #f0f0f0; color: #d62976; }
-
-        .btn:active { transform: scale(0.95); }
+        .ar-logo-text { color: white; font-size: 20px; font-weight: 900; font-style: italic; letter-spacing: -2px; }
+        
+        .btn-text { flex-grow: 1; text-align: left; font-size: 14px; }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <div class="logo-circle">
-            <span>NNR</span>
+        <div class="logo-profile">
+            <img src="file_00000000aab871fa80c1aa477153d537.png" alt="Profile">
         </div>
         
-        <h1>@nnrprodution</h1>
-        <div class="badge">🇮🇩 Karya Anak Bangsa Indonesia</div>
+        <h1 style="font-size: 22px; margin: 0;">@nnrprodution</h1>
+        <div class="badge">🇮🇩 KARYA ANAK BANGSA INDONESIA</div>
 
-        <div class="intro-card">
-            <strong>Halo! Selamat datang di NNR.</strong><br><br>
-            Kami adalah tim pengembang game indie kreatif dari <strong>HSS</strong>. 
-            Kini kami fokus menciptakan karya digital yang seru dan inovatif. 
-            Mari berkolaborasi dan <strong>dukung kami terus ya!</strong>
-        </div>
+        <div style="margin-top: 20px; text-align: left; font-weight: bold; font-size: 13px; margin-bottom: 10px;">TENTUKAN PILIHAN KAMU</div>
 
-        <a href="https://youtube.com/@nnr13?si=bpY-EKWonBtaSIGJ" class="btn btn-yt">YOUTUBE CHANNEL</a>
+        <a href="https://youtube.com/@nnr13" class="btn-link">
+            <div class="ar-box"><span class="ar-logo-text">AR</span></div>
+            <div class="btn-text">KLIK, YOUTUBE NNR</div>
+        </a>
 
-        <a href="https://s.snackvideo.com/u/@nnrproduction/Sij7K7zj" class="btn btn-snack">SNACK VIDEO</a>
+        <a href="https://s.snackvideo.com/u/@nnrproduction" class="btn-link">
+            <div class="ar-box"><span class="ar-logo-text">AR</span></div>
+            <div class="btn-text">KLIK, SNACK VIDEO</div>
+        </a>
 
-        <a href="https://www.instagram.com/nnrprodution" class="btn">INSTAGRAM UTAMA</a>
+        <div style="margin-top: 20px; text-align: left; font-weight: bold; font-size: 13px; margin-bottom: 10px;">INFO SOSIAL MEDIA</div>
 
-        <a href="https://www.instagram.com/nnrproduction13811?igsh=MWNvY2QyNG41NTFlbA==" class="btn btn-ig">INSTAGRAM SECOND</a>
+        <a href="https://www.instagram.com/nnrprodution" class="btn-link">
+            <div class="ar-box"><span class="ar-logo-text">AR</span></div>
+            <div class="btn-text">INSTAGRAM UTAMA</div>
+        </a>
 
-        <a href="https://wa.me/628XXXXXXXXXX" class="btn">HUBUNGI ADMIN</a>
-        
+        <a href="https://wa.me/628XXXXXXXXXX" class="btn-link">
+            <div class="ar-box"><span class="ar-logo-text">AR</span></div>
+            <div class="btn-text">HUBUNGI ADMIN</div>
+        </a>
     </div>
-
 </body>
 </html>
