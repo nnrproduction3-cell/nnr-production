@@ -3,132 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dino Speed Run - Lantai Berjalan</title>
+    <title>Nnrproduction | Game Studio</title>
     <style>
-        body { text-align: center; font-family: 'Courier New', Courier, monospace; background: #333; color: white; margin: 0; overflow: hidden; }
-        canvas { background: #f0f0f0; border-bottom: 5px solid #555; display: block; margin: 20px auto; width: 95%; max-width: 600px; }
-        .info { font-size: 20px; margin-bottom: 10px; }
-        .btn-jump { 
-            padding: 20px 60px; font-size: 22px; font-weight: bold;
-            background: #222; color: #fff; border: 2px solid #fff; border-radius: 10px; 
-            cursor: pointer; user-select: none;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background-color: #0a0a0c;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            
+            /* Gambar Latar Belakang (Cyber Theme) */
+            background-image: url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2071&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
         }
-        .btn-jump:active { background: #555; }
+
+        .container {
+            width: 90%;
+            max-width: 380px;
+            text-align: center;
+            padding: 30px 20px;
+            background-color: rgba(10, 10, 12, 0.85); /* Sedikit lebih gelap agar tulisan jelas */
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* --- PENGATURAN FOTO PROFIL --- */
+        .profile-img {
+            width: 100px;  /* Ukuran lebar foto */
+            height: 100px; /* Ukuran tinggi foto */
+            border-radius: 50%; /* Membuat jadi bulat */
+            object-fit: cover;
+            border: 3px solid rgba(0, 212, 255, 0.5); /* Garis pinggir biru neon */
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3); /* Efek cahaya (glow) */
+            margin-bottom: 15px;
+        }
+
+        .tagline {
+            font-size: 0.7rem;
+            color: #00d4ff;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        h1 {
+            font-size: 1.8rem; /* Sedikit diperkecil agar seimbang dengan foto */
+            font-weight: 800;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #fff, #aaa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .slogan {
+            font-size: 0.85rem;
+            color: #bbbbbb;
+            margin-bottom: 30px;
+            line-height: 1.5;
+            font-style: italic;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn {
+            display: block;
+            padding: 14px;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn:hover {
+            background: rgba(0, 212, 255, 0.15);
+            border: 1px solid #00d4ff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .flag-container {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .indonesia-flag {
+            width: 24px;
+            height: 16px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: linear-gradient(to bottom, #FF0000 50%, #FFFFFF 50%);
+            border-radius: 2px;
+        }
+
+        .footer-text {
+            font-size: 0.6rem;
+            color: #555;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
     </style>
 </head>
 <body>
+    <div class="container">
+        <img src='Hj.jpg' alt="Logo Nnrproduction" class="profile-img">
 
-    <div class="info">Skor: <span id="scoreVal">0</span> | Kecepatan: <span id="speedVal">1</span>x</div>
-    <canvas id="gameCanvas" width="600" height="200"></canvas>
-    <button class="btn-jump" id="jumpBtn">LOMPAT!</button>
+        <div class="tagline">Game Studio</div>
+        <h1>Nnrproduction</h1>
+        
+        <p class="slogan">"Membangun dunia virtual, menciptakan pengalaman tanpa batas."</p>
+        
+        <div class="links">
+            <a href="https://youtube.com/@nnr13?si=CQ5_5KHmOGeePht-" target="_blank" class="btn">
+                YouTube Channel
+            </a>
+            <a href="https://www.instagram.com/nnrprodution?igsh=OG95cm42ZnJpbTRn" target="_blank" class="btn">
+                Instagram Utama
+            </a>
+            <a href="https://www.instagram.com/nnrproduction13811?igsh=MWNvY2QyNG41NTFlbA==" target="_blank" class="btn">
+                Instagram 2
+            </a>
+        </div>
 
-    <script>
-        const canvas = document.getElementById("gameCanvas");
-        const ctx = canvas.getContext("2d");
-        const scoreEl = document.getElementById("scoreVal");
-        const speedEl = document.getElementById("speedVal");
-
-        let dinoY = 150;
-        let gravity = 0;
-        let isGameOver = false;
-        let score = 0;
-        let gameSpeed = 6; // Kecepatan awal
-        let groundX = 0; // Untuk animasi jalan
-
-        // Objek Rintangan
-        let obstacle = { x: 700, width: 30, height: 40, type: 'ground' };
-
-        function doJump() {
-            if (dinoY >= 150 && !isGameOver) {
-                gravity = -15;
-            }
-            if (isGameOver) location.reload();
-        }
-
-        // Kontrol
-        document.getElementById("jumpBtn").addEventListener("touchstart", (e) => { e.preventDefault(); doJump(); });
-        document.getElementById("jumpBtn").addEventListener("mousedown", doJump);
-        window.addEventListener("keydown", (e) => { if (e.code === "Space") doJump(); });
-
-        function update() {
-            if (isGameOver) return;
-
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            // 1. ANIMASI JALAN (Garis-garis lantai)
-            groundX -= gameSpeed;
-            if (groundX < -100) groundX = 0;
-            ctx.strokeStyle = "#bbb";
-            ctx.lineWidth = 2;
-            for (let i = 0; i < 10; i++) {
-                ctx.beginPath();
-                ctx.moveTo(groundX + (i * 100), 195);
-                ctx.lineTo(groundX + (i * 100) + 50, 195);
-                ctx.stroke();
-            }
-
-            // 2. LOGIKA DINO
-            gravity += 0.8;
-            dinoY += gravity;
-            if (dinoY > 150) { dinoY = 150; gravity = 0; }
-            ctx.fillStyle = "#333"; // Warna Dino
-            ctx.fillRect(50, dinoY, 40, 40);
-
-            // 3. LOGIKA RINTANGAN (RANDOM & MAKIN CEPAT)
-            obstacle.x -= gameSpeed;
-
-            if (obstacle.x < -50) {
-                score++;
-                scoreEl.innerText = score;
-                
-                // Tambah kecepatan setiap skor naik
-                gameSpeed += 0.3; 
-                speedEl.innerText = (gameSpeed/6).toFixed(1);
-
-                // Reset rintangan dengan variasi
-                obstacle.x = 600 + Math.random() * 300;
-                let r = Math.random();
-                if (r > 0.7) {
-                    // Rintangan Burung (Melayang sedikit)
-                    obstacle.type = 'air';
-                    obstacle.height = 20;
-                    obstacle.width = 40;
-                    obstacle.yPos = 120; 
-                } else {
-                    // Rintangan Balok Tanah
-                    obstacle.type = 'ground';
-                    obstacle.height = 30 + Math.random() * 30;
-                    obstacle.width = 20 + Math.random() * 20;
-                    obstacle.yPos = 200 - obstacle.height;
-                }
-            }
-
-            // Gambar Rintangan
-            ctx.fillStyle = obstacle.type === 'air' ? "#007bff" : "#ff4444";
-            ctx.fillRect(obstacle.x, obstacle.yPos, obstacle.width, obstacle.height);
-
-            // 4. CEK TABRAKAN
-            let dinoRight = 50 + 40;
-            let dinoBottom = dinoY + 40;
-            if (50 < obstacle.x + obstacle.width && 
-                dinoRight > obstacle.x && 
-                dinoY < obstacle.yPos + obstacle.height &&
-                dinoBottom > obstacle.yPos) {
-                
-                isGameOver = true;
-                ctx.fillStyle = "rgba(0,0,0,0.7)";
-                ctx.fillRect(0,0,600,200);
-                ctx.fillStyle = "white";
-                ctx.font = "30px Arial";
-                ctx.fillText("GAME OVER!", 210, 100);
-                ctx.font = "20px Arial";
-                ctx.fillText("Klik Tombol untuk Main Lagi", 170, 130);
-            }
-
-            requestAnimationFrame(update);
-        }
-
-        update();
-    </script>
+        <div class="flag-container">
+            <div class="indonesia-flag"></div>
+            <div class="footer-text">© 2026 Nnrproduction Indonesia</div>
+        </div>
+    </div>
 </body>
 </html>
