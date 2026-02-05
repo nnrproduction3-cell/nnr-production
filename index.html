@@ -3,151 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nnrproduction | Game Studio</title>
+    <title>NNR Production Official</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* Animasi Background Bergerak */
         body {
-            font-family: 'Segoe UI', Roboto, sans-serif;
-            background-color: #0a0a0c;
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            
-            /* Gambar Latar Belakang (Cyber Theme) */
-            background-image: url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2071&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            background-blend-mode: overlay;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 380px;
-            text-align: center;
-            padding: 30px 20px;
-            background-color: rgba(10, 10, 12, 0.85); /* Sedikit lebih gelap agar tulisan jelas */
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.6);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        /* --- PENGATURAN FOTO PROFIL --- */
-        .profile-img {
-            width: 100px;  /* Ukuran lebar foto */
-            height: 100px; /* Ukuran tinggi foto */
-            border-radius: 50%; /* Membuat jadi bulat */
-            object-fit: cover;
-            border: 3px solid rgba(0, 212, 255, 0.5); /* Garis pinggir biru neon */
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3); /* Efek cahaya (glow) */
-            margin-bottom: 15px;
-        }
-
-        .tagline {
-            font-size: 0.7rem;
-            color: #00d4ff;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        h1 {
-            font-size: 1.8rem; /* Sedikit diperkecil agar seimbang dengan foto */
-            font-weight: 800;
-            margin-bottom: 10px;
-            background: linear-gradient(to right, #fff, #aaa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .slogan {
-            font-size: 0.85rem;
-            color: #bbbbbb;
-            margin-bottom: 30px;
-            line-height: 1.5;
-            font-style: italic;
-        }
-
-        .links {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .btn {
-            display: block;
-            padding: 14px;
+            background: linear-gradient(-45deg, #004e92, #001f3f, #0052d4, #1a1a2e);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            font-family: 'Segoe UI', Arial, sans-serif;
             color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex; flex-direction: column; align-items: center;
+            min-height: 100vh; margin: 0; padding: 20px;
         }
-
-        .btn:hover {
-            background: rgba(0, 212, 255, 0.15);
-            border: 1px solid #00d4ff;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
-
-        .flag-container {
-            margin-top: 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
+        .logo-profile {
+            width: 110px; height: 110px; background: white; border-radius: 50%;
+            margin-bottom: 15px; display: flex; align-items: center; justify-content: center;
+            border: 3px solid white; box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            overflow: hidden;
         }
-
-        .indonesia-flag {
-            width: 24px;
-            height: 16px;
-            border: 1px solid rgba(255,255,255,0.2);
-            background: linear-gradient(to bottom, #FF0000 50%, #FFFFFF 50%);
-            border-radius: 2px;
+        .logo-profile img {
+            width: 100%; height: 100%; object-fit: cover; display: block;
         }
-
-        .footer-text {
-            font-size: 0.6rem;
-            color: #555;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+        .badge {
+            background: #e63946; color: white; padding: 8px 20px;
+            border-radius: 20px; font-size: 12px; font-weight: bold; margin-bottom: 15px;
         }
+        .info-box {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 20px; border-radius: 15px; width: 90%; max-width: 320px;
+            text-align: center; margin-bottom: 25px; line-height: 1.6;
+            backdrop-filter: blur(5px);
+        }
+        .links { width: 90%; max-width: 320px; }
+        .btn {
+            display: block; text-align: center; padding: 12px; margin-bottom: 12px;
+            border-radius: 8px; font-weight: bold; text-decoration: none; color: white;
+            text-transform: uppercase; font-size: 14px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .btn-red { background-color: #ff0000; }
+        .btn-yellow { background-color: #ffcc00; color: #000; }
+        .btn-blue { background-color: #004e92; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src='hh.jpg' alt="Logo Nnrproduction" class="profile-img">
 
-        <div class="tagline">Game Studio</div>
-        <h1>Nnrproduction</h1>
-        
-        <p class="slogan">"Membangun dunia virtual, menciptakan pengalaman tanpa batas."</p>
-        
-        <div class="links">
-            <a href="https://youtube.com/@nnr13?si=CQ5_5KHmOGeePht-" target="_blank" class="btn">
-                YouTube Channel
-            </a>
-            <a href="https://www.instagram.com/nnrprodution?igsh=OG95cm42ZnJpbTRn" target="_blank" class="btn">
-                Instagram Utama
-            </a>
-            <a href="https://www.instagram.com/nnrproduction13811?igsh=MWNvY2QyNG41NTFlbA==" target="_blank" class="btn">
-                Instagram 2
-            </a>
-        </div>
-
-        <div class="flag-container">
-            <div class="indonesia-flag"></div>
-            <div class="footer-text">© 2026 Nnrproduction Indonesia</div>
-        </div>
+    <div class="logo-profile">
+        <img src="Hj.jpg" alt="Profile">
     </div>
+    
+    <h1 style="font-size: 22px; margin: 0;">@nnrprodution</h1>
+    <div class="badge">🇮🇩 KARYA ANAK BANGSA INDONESIA</div>
+
+    <div class="info-box">
+        <h3 style="margin-top: 0;">Halo! Selamat datang di NNR.</h3>
+        <p style="font-size: 13px;">
+            Kami adalah tim pengembang game indie kreatif dari <b>HSS</b>. Kini kami fokus dan inovatif. Mari berkolaborasi dan dukung kami terus ya!
+        </p>
+    </div>
+
+    <div class="links">
+        <a href="https://youtube.com/@nnr13" class="btn btn-red">Youtube Channel</a>
+        <a href="https://s.snackvideo.com/u/@nnrproduction" class="btn btn-yellow">Snack Video</a>
+        <a href="https://www.instagram.com/nnrprodution" class="btn btn-blue">Instagram Utama</a>
+        <a href="https://www.instagram.com/nnrprodution" class="btn btn-blue">Instagram 2 (Official)</a>
+        <a href="https://wa.me/628XXXXXXXXXX" class="btn btn-blue">Hubungi Admin</a>
+    </div>
+
 </body>
 </html>
