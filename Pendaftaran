@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Tim NNR Production</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #1a1a1a; color: white; padding: 20px; }
+        .container { background: #2d2d2d; padding: 30px; border-radius: 12px; max-width: 480px; margin: auto; box-shadow: 0 4px 15px rgba(0,0,0,0.5); border: 1px solid #444; }
+        h2 { text-align: center; color: #00ff88; margin-bottom: 20px; margin-top: 0; text-transform: uppercase; }
+        label { display: block; margin-top: 15px; font-size: 14px; color: #ccc; font-weight: bold; }
+        
+        /* Pengaturan umum input agar rapi */
+        input, select, textarea { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #444; border-radius: 6px; background: #3d3d3d; color: white; box-sizing: border-box; }
+        input:focus, textarea:focus, select:focus { border-color: #00ff88; outline: none; }
+        
+        /* PERBAIKAN JENIS KELAMIN: Sejajar dan tidak lebar 100% */
+        .radio-group { 
+            margin-top: 10px; 
+            background: #333; 
+            padding: 12px; 
+            border-radius: 6px; 
+            border: 1px solid #444; 
+            display: flex; 
+            gap: 20px; 
+        }
+        .radio-item { 
+            display: flex; 
+            align-items: center; 
+            font-weight: normal; 
+            color: white; 
+            font-size: 14px; 
+            cursor: pointer;
+        }
+        .radio-item input { 
+            width: auto !important; /* Kunci agar tidak lebar */
+            margin-right: 8px; 
+            margin-top: 0; 
+        }
+
+        /* Checkbox Gaji: Menonjol agar dibaca */
+        .checkbox-group { 
+            margin-top: 20px; 
+            background: rgba(255, 0, 0, 0.1); 
+            padding: 12px; 
+            border-radius: 6px; 
+            border: 1px solid rgba(255, 77, 77, 0.3); 
+            display: flex; 
+            align-items: flex-start; 
+        }
+        .checkbox-group input { width: auto !important; margin-right: 10px; margin-top: 4px; }
+        .checkbox-group label { font-weight: normal; color: white; font-size: 14px; margin-top: 0; }
+
+        button { width: 100%; padding: 14px; background-color: #00ff88; color: #1a1a1a; border: none; border-radius: 6px; margin-top: 25px; font-weight: bold; cursor: pointer; transition: 0.3s; text-transform: uppercase; }
+        button:hover { background-color: #00cc6e; transform: scale(1.02); }
+        .footer { text-align: center; margin-top: 15px; font-size: 11px; color: #777; }
+        .required { color: #ff4d4d; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Form Pendaftaran NNR</h2>
+    
+    <form action="https://formspree.io/f/mgonbvdz" method="POST">
+        
+        <label>Nama Lengkap: <span class="required">*</span></label>
+        <input type="text" name="nama" placeholder="Isi nama lengkap" required>
+
+        <label>Jenis Kelamin: <span class="required">*</span></label>
+        <div class="radio-group">
+            <label class="radio-item">
+                <input type="radio" name="kelamin" value="Laki-laki" required> Laki-laki
+            </label>
+            <label class="radio-item">
+                <input type="radio" name="kelamin" value="Perempuan"> Perempuan
+            </label>
+        </div>
+
+        <label>Umur: <span class="required">*</span></label>
+        <input type="number" name="umur" placeholder="Contoh: 14" required>
+
+        <label>Bidang yang Ingin Dimasuki: <span class="required">*</span></label>
+        <select name="bidang">
+            <option value="3D Model">3D Model (Prisma3D/Blender)</option>
+            <option value="Coding">Coding (HTML/Java)</option>
+            <option value="Animator">Animator</option>
+            <option value="Lainnya">Lainnya</option>
+        </select>
+
+        <label>Tujuan Masuk: <span class="required">*</span></label>
+        <textarea name="tujuan" rows="2" placeholder="Apa tujuan kamu?" required></textarea>
+
+        <label>Keahlian Kamu: <span class="required">*</span></label>
+        <textarea name="keahlian" rows="2" placeholder="Sebutkan keahlianmu" required></textarea>
+
+        <label>Kenapa Ingin Masuk NNR? <span class="required">*</span></label>
+        <textarea name="alasan" rows="2" placeholder="Berikan alasanmu" required></textarea>
+
+        <label>Nomor WA: <span class="required">*</span></label>
+        <input type="tel" name="whatsapp" placeholder="08..." required>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="gaji" name="setuju_tanpa_gaji" required>
+            <label for="gaji"><strong>Saya siap bekerja tanpa digaji</strong> demi membangun NNR Production bersama-sama. <span class="required">*</span></label>
+        </div>
+
+        <button type="submit">Kirim Pendaftaran</button>
+    </form>
+    <div class="footer">Data pendaftaran akan terkirim ke nnrproduction4@gmail.com</div>
+</div>
+
+</body>
+</html>
+                   
